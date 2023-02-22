@@ -15,6 +15,7 @@ public class RegisterRequest {
     @NotNull
     @Size(min=1, max=15, message="First name '${validatedValue}' must be between {min} and {max} chars long")
     private String firstName;
+
     @NotBlank
     @NotNull
     @Size(min=1, max=15, message="Last name '${validatedValue}' must be between {min} and {max} chars long")
@@ -24,6 +25,7 @@ public class RegisterRequest {
     @NotNull
     @Size(min=1, max=20, message="User name '${validatedValue}' must be between {min} and {max} chars long")
     private String userName;
+
     @NotBlank
     @NotNull
     @Size(min=5, max=20, message="PassWord '${validatedValue}' must be between {min} and {max} chars long")

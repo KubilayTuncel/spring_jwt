@@ -13,6 +13,10 @@ public class JwtUtils {
     //1: JWT generate
     //2: JWT valide ediecek
     //3: JWT --> icerisinden username i cekecegiz.
+    //JWT token = base64(header) + base64(payload)  +  signature
+    //header= hash alg, token type : JWT
+    //payload : userId, username ...
+    //signature : secret key , base64(header) + base64(payload)
 
     private String jwtSecret = "sboot"; //secret key jwt token bizden bu degeri istiyor ve sistemi daha karmasik hala getirmemizi sagliyor.
     private long jwtExpritaonMs =  86400000; //24*60*60*1000 milisaniye cinsinden.
@@ -33,7 +37,7 @@ public class JwtUtils {
 
     }
 
-
+    //hashleme : tek yönlü sifrelemedir, geri döndürülemez.
     //*************Validate Token
     public boolean valideToken(String token){
         //ilk olarak tüm code'u sectik. sonra asagidaki isleme devam ettik.
